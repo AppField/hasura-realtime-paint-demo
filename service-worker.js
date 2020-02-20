@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ionic-realtime-pixelart/precache-manifest.068e972e9f32b5e85532c9eb63d40f16.js"
+  "/ionic-realtime-pixelart/precache-manifest.35474ac0f0d3eb1b842492484410719a.js"
 );
 
 self.addEventListener('message', (event) => {
