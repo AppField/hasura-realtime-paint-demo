@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "83312517dcb4ba735122bf18eeca3ee9",
+    "revision": "10af4b96d754d0f96fda3c6d8b2549c2",
     "url": "/ionic-realtime-pixelart/index.html"
   },
   {
