@@ -32,8 +32,10 @@ const Pixel = ({ id, color, newColor }: PixelProps) => {
     <span
       className="pixel"
       onClick={() => {
-        changeColor(newColor);
-        updatePixelColor({ variables: { id, color: newColor } });
+        if (color !== newColor) {
+          changeColor(newColor);
+          updatePixelColor({ variables: { id, color: newColor } });
+        }
       }}
       style={{
         backgroundColor: pixelColor
