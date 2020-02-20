@@ -5,7 +5,8 @@ import {
   IonCardTitle,
   IonCardSubtitle,
   IonCardContent,
-  IonLoading
+  IonLoading,
+  IonAlert
 } from "@ionic/react";
 import { useSubscription } from "@apollo/react-hooks";
 import gql from "graphql-tag";
@@ -34,6 +35,11 @@ const Draw = () => {
 
   if (loading) {
     return <IonLoading isOpen={true} message="Pixels are loading" />;
+  }
+  if (error) {
+    return (
+      <IonAlert isOpen={true} message="Pixels could not be loaded"></IonAlert>
+    );
   }
 
   return (

@@ -20,6 +20,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
           <IonTitle>{title}</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent>
         <IonHeader collapse="condense">
           <IonToolbar>
