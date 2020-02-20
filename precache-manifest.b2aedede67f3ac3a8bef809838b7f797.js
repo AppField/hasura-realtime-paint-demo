@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "10af4b96d754d0f96fda3c6d8b2549c2",
+    "revision": "45b0b1b63426ab63a82709068e7d584f",
     "url": "/ionic-realtime-pixelart/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ionic-realtime-pixelart/static/css/9.8b2ccefd.chunk.css"
   },
   {
-    "revision": "68713d26169c8f79511a",
+    "revision": "08414665e203b9ce7626",
     "url": "/ionic-realtime-pixelart/static/css/main.ae8d7a9d.chunk.css"
   },
   {
@@ -420,8 +420,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ionic-realtime-pixelart/static/js/97.9df9fc5b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "68713d26169c8f79511a",
-    "url": "/ionic-realtime-pixelart/static/js/main.468686bd.chunk.js"
+    "revision": "08414665e203b9ce7626",
+    "url": "/ionic-realtime-pixelart/static/js/main.b8a6b21a.chunk.js"
   },
   {
     "revision": "6ef4fde89865b96e47b6",
