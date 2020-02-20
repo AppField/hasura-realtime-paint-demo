@@ -1,19 +1,12 @@
-import React from "react";
-import { Redirect, Route } from "react-router-dom";
+import React, { useState } from "react";
 import {
   IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardContent,
+  IonCardSubtitle
 } from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
-import { ellipse, square, triangle } from "ionicons/icons";
-import Tab1 from "./pages/Tab1";
-import Tab2 from "./pages/Tab2";
-import Tab3 from "./pages/Tab3";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -33,35 +26,40 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import Layout from "./components/Layout";
+import ColorPicker from "./components/ColorPicker";
+import Pixel from "./components/Pixel";
+import "./App.css";
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter basename={process.env.PUBLIC_URL + "/"}>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route path="/tab1" component={Tab1} exact={true} />
-          <Route path="/tab2" component={Tab2} exact={true} />
-          <Route path="/tab3" component={Tab3} />
-          <Route path="/" render={() => <Redirect to="/tab1" />} exact={true} />
-        </IonRouterOutlet>
+const pixels = new Array(400).fill("white");
 
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  const [color, changeColor] = useState<string>("white");
+
+  return (
+    <IonApp>
+      <Layout title="Draw Pixelart">
+        <IonCard className="drawCard">
+          <IonCardHeader>
+            <IonCardTitle>Pick a Color</IonCardTitle>
+            <IonCardSubtitle>And a Pixel</IonCardSubtitle>
+          </IonCardHeader>
+
+          <IonCardContent>
+            <ColorPicker changeColor={changeColor} />
+
+            <div className="ion-padding">
+              <div className="container">
+                {pixels.map((pixel, idx) => (
+                  <Pixel color={pixel} key={idx} newColor={color} />
+                ))}
+              </div>
+            </div>
+          </IonCardContent>
+        </IonCard>
+      </Layout>
+    </IonApp>
+  );
+};
 
 export default App;
